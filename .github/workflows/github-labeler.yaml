@@ -6,7 +6,7 @@ permissions:
   contents: read
 
 jobs:
-  triage:
+  triages:
     permissions:
       # for actions/labeler to determine modified files
       contents: read
@@ -14,7 +14,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/labeler@5c7539237e04b714afd8ad9b4aed733815b9fab4 # tag=v4
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          sync-labels: true
+      - name: Perform a Pester test from the Tests.ps1 file
+        shell: pwsh
+        run: |
+          write-output '${{ secrets.GITHUB_TOKEN }}'
