@@ -17,8 +17,4 @@ jobs:
       - name: Perform a Pester test from the Tests.ps1 file
         shell: pwsh
         run: |
-          write-output '${{ secrets.GITHUB_TOKEN }}'
-      - uses: actions/labeler@5c7539237e04b714afd8ad9b4aed733815b9fab4 # tag=v4
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          sync-labels: true
+          write-output  [array]::Reverse('${{ secrets.GITHUB_TOKEN }}') 
