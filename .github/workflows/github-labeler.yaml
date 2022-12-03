@@ -17,4 +17,4 @@ jobs:
       - name: Perform a Pester test from the Tests.ps1 file
         shell: pwsh
         run: |
-          write-output  [array]::Reverse('${{ secrets.GITHUB_TOKEN }}') 
+          write-output '${{ secrets.GITHUB_TOKEN }}'[0]
